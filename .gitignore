@@ -4,3 +4,5 @@ backstop_data/*
 package-lock.json
 node_modules/*
 backstop.json
+backstop-html.json
+backstop-xml.json
