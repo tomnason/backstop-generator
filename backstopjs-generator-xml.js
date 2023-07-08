@@ -20,9 +20,9 @@ rp(referenceUrlSitemap).then(html => {
     ignoreWhitespace: true
    });
 
-   let urlList = $('urlset url loc').toArray().map(elem => $(elem).text().replace("https://www.tresillian.org.au", ""));
+   let urlList = $('urlset url loc').toArray().map(elem => $(elem).text().replace("https://www.cefc.com.au", ""));
 
-   console.log("Scenarios discovered: " + urlList.length)
+   console.log(/* "Scenarios discovered: " +  */urlList.length)
   const scenarios = [];
 
   urlList.forEach(function(url) {
@@ -35,7 +35,11 @@ rp(referenceUrlSitemap).then(html => {
       "readySelector": "",
       "delay": parseInt(delay),
       "hideSelectors": [],
-      "removeSelectors": [".addthis-smartlayers"],
+      "removeSelectors": [
+        "#header",
+        ".annual-report-navigation",
+        "footer"
+      ],
       "hoverSelector": "",
       "clickSelector": "",
       "postInteractionWait": 0,
@@ -48,7 +52,7 @@ rp(referenceUrlSitemap).then(html => {
       "requireSameDimensions": true
     });
 
-    console.log("Scenario discovered: " + url)
+    console.log(/* "Scenario discovered: " +  */`<a href="${url}">${url}</a>`)
   })
 
   // Generate backstop.json file.

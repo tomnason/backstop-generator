@@ -34,23 +34,23 @@ rp(referenceUrl).then(html => {
 
   links.forEach(function(element) {
     scenarios.push({
-      "label": element.title,
+      "label": "AR21: "+element.title,
       "url": referredUrl + element.href,
       "referenceUrl": referenceUrl + element.href,
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "readyEvent": "",
-      "readySelector": "",
       "delay": parseInt(delay),
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [ "main"],
-      "selectorExpansion": true,
-      "expect": 0,
-      "misMatchThreshold" : 0.1,
-      "requireSameDimensions": true
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "misMatchThreshold" : 0.2,
+      // "readyEvent": "",
+      // "readySelector": "",
+      // "hideSelectors": [],
+      // "removeSelectors": [],
+      // "hoverSelector": "",
+      // "clickSelector": "",
+      // "postInteractionWait": 0,
+      // "selectors": [ "main"],
+      // "selectorExpansion": true,
+      // "expect": 0,
+      // "requireSameDimensions": true
     });
   })
 
@@ -60,19 +60,19 @@ rp(referenceUrl).then(html => {
   var json = {
     "viewports": [
       {
-          "label": "phone",
-          "width": 360,
-          "height": 740
+        "label": "phone",
+        "width": 320,
+        "height": 480
       },
       {
-          "label": "tablet_v",
-          "width": 768,
-          "height": 1024
+        "label": "tablet",
+        "width": 1024,
+        "height": 768
       },
       {
-          "label": "desktop",
-          "width": 1024,
-          "height": 768
+        "label": "desktop",
+        "width": 1920,
+        "height": 1024
       }
     ],
     "onBeforeScript": "puppet/onBefore.js",
